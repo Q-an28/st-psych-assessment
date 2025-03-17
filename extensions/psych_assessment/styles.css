@@ -1,0 +1,265 @@
+/* 九维心理分析核心样式 */
+.nine-dims-settings, .nine-dim-report {
+    --dim-accent: #6c5ce7;
+    --dim-border: 1px solid var(--background-modifier-border);
+    font-family: var(--font-primary);
+    color: var(--text-normal);
+  }
+  
+  /* ================= 设置面板样式 ================= */
+  .nine-dims-settings {
+    padding: 1.5rem;
+    background: var(--background-primary);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  /* 维度设置区块 */
+  section[data-dim] {
+    padding: 1.2rem;
+    margin: 1rem 0;
+    background: var(--background-secondary);
+    border-radius: 6px;
+    border: var(--dim-border);
+  }
+  
+  section[data-dim] h4 {
+    margin: 0 0 1rem 0;
+    font-size: 1.1em;
+    color: var(--dim-accent);
+    border-bottom: 2px solid var(--dim-accent);
+    padding-bottom: 0.5rem;
+  }
+  
+  /* 网格布局系统 */
+  .grid-2col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .grid-3col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  /* 输入控件统一样式 */
+  input, select, textarea {
+    width: 100%;
+    padding: 0.6rem;
+    border: var(--dim-border);
+    border-radius: 4px;
+    background: var(--background-primary);
+    color: var(--text-normal);
+    transition: all 0.2s ease;
+  }
+  
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--dim-accent);
+    box-shadow: 0 0 0 2px rgba(108,92,231,0.2);
+  }
+  
+  textarea {
+    min-height: 80px;
+    resize: vertical;
+  }
+  
+  /* 生活事件条目样式 */
+  .life-event {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: var(--background-modifier-active);
+    border-radius: 4px;
+  }
+  
+  .event-item + .event-item {
+    margin-top: 0.8rem;
+  }
+  
+  /* 复选框组样式 */
+  .checklist {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .checklist label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background: var(--background-modifier-active);
+    border-radius: 4px;
+  }
+  
+  /* ================= 报告生成样式 ================= */
+  .nine-dim-report {
+    margin: 2rem 0;
+    background: var(--background-secondary);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  /* 维度区块标题 */
+  .dimension h3 {
+    margin: 0;
+    padding: 1rem;
+    background: var(--dim-accent);
+    color: white;
+    font-size: 1.1em;
+  }
+  
+  /* 数据网格布局 */
+  .dim-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .dim-item {
+    padding: 0.8rem;
+    background: var(--background-primary);
+    border-radius: 4px;
+    border: var(--dim-border);
+  }
+  
+  .dim-item label {
+    display: block;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: 0.4rem;
+  }
+  
+  /* 表格增强样式 */
+  .psych-report table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+  }
+  
+  .psych-report th {
+    background: var(--dim-accent);
+    color: white;
+    padding: 0.8rem;
+    text-align: left;
+  }
+  
+  .psych-report td {
+    padding: 0.8rem;
+    border-bottom: var(--dim-border);
+  }
+  
+  .psych-report tr:nth-child(even) {
+    background: var(--background-modifier-active);
+  }
+  
+  /* ================= 交互组件样式 ================= */
+  /* 滑块控件 */
+  slider-input {
+    display: block;
+    margin: 1rem 0;
+  }
+  
+  slider-input input[type="range"] {
+    width: 100%;
+    height: 6px;
+    background: var(--background-modifier-active);
+    border-radius: 3px;
+    outline: none;
+  }
+  
+  slider-input input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    background: var(--dim-accent);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  /* 工具栏按钮 */
+  .psych-toolbar {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1rem;
+  }
+  
+  .psych-toolbar .btn {
+    padding: 0.6rem 1.2rem;
+    background: var(--dim-accent);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  
+  .psych-toolbar .btn:hover {
+    opacity: 0.9;
+  }
+  
+  /* ================= 响应式设计 ================= */
+  @media (max-width: 768px) {
+    .grid-2col, .grid-3col {
+      grid-template-columns: 1fr;
+    }
+    
+    .dim-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .nine-dims-settings {
+      padding: 1rem;
+    }
+  }
+  
+  /* ================= 状态指示器 ================= */
+  .psych-status-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.9em;
+  }
+  
+  .status-complete {
+    background: #00b89440;
+    color: #00b894;
+  }
+  
+  .status-pending {
+    background: #fdcb6e40;
+    color: #fdcb6e;
+  }
+  
+  /* 错误提示样式 */
+  .psych-error {
+    padding: 1rem;
+    background: #ff767540;
+    color: #d63031;
+    border-radius: 4px;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  
+  .psych-error::before {
+    content: "⚠️";
+    font-size: 1.2em;
+  }
+  
+  /* 动画效果 */
+  @keyframes dimPulse {
+    0% { box-shadow: 0 0 0 0 rgba(108,92,231,0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(108,92,231,0); }
+    100% { box-shadow: 0 0 0 0 rgba(108,92,231,0); }
+  }
+  
+  .highlight-dimension {
+    animation: dimPulse 1.5s infinite;
+  }
