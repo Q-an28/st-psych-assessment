@@ -1,0 +1,9 @@
+{
+    "name": "st-extension-psych",
+    "version": "1.0.0",
+    "st:author": "Fan",
+    "st:license": "MIT",
+    "dependencies": {
+        "compromise": "^14.14.4"
+    }
+}
